@@ -1,7 +1,14 @@
 from fastapi import FastAPI
-app =from fastapi import FastAPI
+
 app = FastAPI()
 
 @app.get("/my-first-api")
-def hola(name: str):
-    return {"hola apis mundo!" + name + "!"}
+def hola(name = None):
+
+    if name is None:
+        text = "Holaa!"
+
+    else:
+        text = "Holaa" + name + ""
+    
+    return text
